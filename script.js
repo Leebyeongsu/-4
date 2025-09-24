@@ -1672,18 +1672,7 @@ function showResult(applicationData = null) {
 
     console.log('결과 페이지 표시:', applicationData);
 
-    // 고객 모드에서는 최종적으로 전단지 이미지/컨테이너를 강제 숨김
-    if (isCustomerModeForResult) {
-        if (promotionFlyer) {
-            promotionFlyer.style.display = 'none';
-            promotionFlyer.style.visibility = 'hidden';
-        }
-        const flyerImagesFinal = document.querySelectorAll('.flyer-image');
-        flyerImagesFinal.forEach(function(img) {
-            img.style.display = 'none';
-            img.style.visibility = 'hidden';
-        });
-    }
+    // 고객 모드에서도 전단지 이미지를 표시하도록 변경 (숨김 해제)
 }
 
 // 모바일 환경 최적화 함수
@@ -1772,18 +1761,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 qrSection.style.display = 'none';
             }
 
-            // 고객 모드에서는 전단지 이미지와 컨테이너 강제 숨김
-            if (promotionFlyer) {
-                promotionFlyer.style.display = 'none';
-                promotionFlyer.style.visibility = 'hidden';
-                promotionFlyer.classList.add('customer-mode-hidden');
-            }
-            const flyerImages = document.querySelectorAll('.flyer-image');
-            flyerImages.forEach(function(img) {
-                img.style.display = 'none';
-                img.style.visibility = 'hidden';
-                img.classList.add('customer-mode-hidden');
-            });
+            // 고객 모드에서도 전단지 이미지를 표시하도록 변경 (숨김하지 않음)
             
             // 고객용 제출 버튼 강제 표시
             if (customerSubmitSection) {
@@ -1802,11 +1780,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 #customerSubmitSection {
                     display: block !important;
                 }
-                /* 고객 모드에서 이미지 노출 방지 */
-                #promotionFlyer, .flyer-image {
-                    display: none !important;
-                    visibility: hidden !important;
-                }
+                /* 고객 모드에서도 이미지 노출 허용 */
             `;
             document.head.appendChild(style);
             
