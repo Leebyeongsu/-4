@@ -1618,18 +1618,15 @@ function showResult(applicationData = null) {
         const workType = applicationData.workType || applicationData.work_type;
         console.log('WorkType 확인:', workType);
 
-        // 통신사별 전단 이미지 설정
+        // 통신사별 전단 이미지 설정 (모든 통신사 동일 이미지 사용)
         if (promotionFlyer) {
-            let imgSrc = '아파트_공고문_협성르네상스_이은화.jpg';
+            const imgSrc = '아파트_공고문_협성르네상스_이은화.jpg';
             let altText = '통신 서비스 안내';
             if (workType === 'exterior') {
-                imgSrc = 'skt-promotion.jpg';
                 altText = 'SKT 전용 안내';
             } else if (workType === 'plumbing') {
-                imgSrc = 'lguplus-promotion.jpg';
                 altText = 'LG U+ 전용 안내';
             } else if (workType === 'electrical') {
-                imgSrc = 'general-promotion.jpg';
                 altText = '일반 통신사 안내';
             }
             promotionFlyer.innerHTML = `<img src="${imgSrc}" alt="${altText}" class="flyer-image">`;
