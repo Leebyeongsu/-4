@@ -286,6 +286,11 @@ const config = isProduction ? productionConfig : developmentConfig;
 
 ## 📚 문서
 
+### 프로젝트 문서
+- [GitHub Copilot CLI 사용 가이드](코파일럿_CLI_사용가이드.md) - AI 기반 개발 도구 사용법
+- [CLAUDE.md](CLAUDE.md) - Claude AI 코딩 에이전트 가이드
+- [README-MCP.md](README-MCP.md) - MCP 서버 설정 가이드
+
 ### API 문서
 - [Supabase JavaScript Client](https://supabase.com/docs/reference/javascript)
 - [EmailJS Documentation](https://www.emailjs.com/docs/)
